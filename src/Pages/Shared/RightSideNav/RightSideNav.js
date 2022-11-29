@@ -1,9 +1,14 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const RightSideNav = () => {
     return (
         <div>
-            <h2>This is Right Side Nav</h2>
+            <ButtonGroup vertical>
+                <Button variant="outline-primary">Login With Google</Button>
+                <Button variant="outline-dark">Login With Github</Button>
+            </ButtonGroup>
         </div>
     );
 };
