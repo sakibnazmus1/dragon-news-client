@@ -7,7 +7,7 @@ const NewsSumarryCard = ({ news }) => {
     const { title, _id, image_url, author, details, total_view, } = news;
     console.log(news);
     return (
-        <Card className="">
+        <Card className="mb-5">
             <Card.Header>Featured</Card.Header>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
