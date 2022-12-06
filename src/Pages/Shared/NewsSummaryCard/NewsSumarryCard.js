@@ -15,16 +15,16 @@ const NewsSumarryCard = ({ news }) => {
                     <Image
                         roundedCircle
                         className='me-2'
-                        src={author.img}
+                        src={author?.img}
                         style={{ height: '50px' }}
                     ></Image>
                     <div>
-                        <p>{author.name}</p>
-                        <p>{author.published_date}</p>
+                        <p className='mb-0'>{author?.name}</p>
+                        <p>{author?.published_date}</p>
                     </div>
                 </div>
                 <div>
-                    <FaBookmark></FaBookmark>
+                    <FaBookmark className='me-2'></FaBookmark>
                     <FaShareAlt></FaShareAlt>
                 </div>
             </Card.Header>
