@@ -11,6 +11,7 @@ const NewsSumarryCard = ({ news }) => {
             <Card.Header>Featured</Card.Header>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
+                <Card.Img variant="top" src={image_url} />
                 <Card.Text>
                     {
                         details.length > 250 ?
