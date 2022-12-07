@@ -1,11 +1,11 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 
 const News = () => {
     const news = useLoaderData();
-    const { title, image_url, details } = news
+    const { title, image_url, category_id, details } = news
     return (
         <Card>
             <Card.Img variant="top" src={image_url} />
@@ -14,7 +14,9 @@ const News = () => {
                 <Card.Text>
                     {details}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to={`/category/${category_id}`}>
+                    <Button variant="primary">All News In This Category</Button>
+                </Link>
             </Card.Body>
         </Card>
     );
