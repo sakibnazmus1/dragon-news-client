@@ -7,7 +7,7 @@ import { FaBookmark, FaEye, FaShareAlt, FaStar } from 'react-icons/fa';
 
 const NewsSumarryCard = ({ news }) => {
     const { title, _id, image_url, author, details, total_view, rating } = news;
-    console.log(news);
+    // console.log(news);
     return (
         <Card className="mb-5">
             <Card.Header className='d-flex justify-content-between align-items-center'>
