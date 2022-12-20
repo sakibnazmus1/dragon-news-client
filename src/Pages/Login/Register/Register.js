@@ -8,6 +8,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('');
+    const [accepted, setAccepted] = useState(false)
     const { createUser } = useContext(AuthContext);
 
     const handleSubmit = event => {
@@ -33,6 +34,10 @@ const Register = () => {
 
     }
 
+    const handleAccapted = event => {
+        setAccepted(event.target.checked)
+    }
+
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -55,9 +60,10 @@ const Register = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
                     type="checkbox"
+                    onClick={handleAccapted}
                     label={<>Accept <Link to='/terms'>terms and condition</Link></>} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" disabled={!accepted}>
                 Register
             </Button>
             <Form.Text className="text-danger">
