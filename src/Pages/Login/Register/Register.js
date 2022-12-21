@@ -9,7 +9,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 const Register = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false)
-    const { createUser, userUpdateProfile } = useContext(AuthContext);
+    const { createUser, userUpdateProfile, verifyEmail } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -28,6 +28,7 @@ const Register = () => {
                 setError('');
                 form.reset();
                 handleUserUpdateProfile(name, photoURL);
+                handleEmailVerifecation();
             })
             .catch(error => {
                 console.error(error)
@@ -48,6 +49,12 @@ const Register = () => {
 
     const handleAccapted = event => {
         setAccepted(event.target.checked)
+    }
+
+    const handleEmailVerifecation = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => console.log(error));
     }
 
 
