@@ -1,3 +1,4 @@
+import toast, { Toaster } from 'react-hot-toast';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -27,7 +28,12 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                navigate(from, { replace: true });
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    toast.error('Your Email is not verified.Please Verify your email address')
+                }
             })
             .catch(error => {
                 console.error(error)
