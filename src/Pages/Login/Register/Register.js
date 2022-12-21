@@ -1,3 +1,4 @@
+import toast, { Toaster } from 'react-hot-toast';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -29,6 +30,7 @@ const Register = () => {
                 form.reset();
                 handleUserUpdateProfile(name, photoURL);
                 handleEmailVerifecation();
+                toast.success('Please Verify Your Email Address')
             })
             .catch(error => {
                 console.error(error)
